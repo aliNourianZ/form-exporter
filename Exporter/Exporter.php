@@ -14,10 +14,10 @@ abstract class Exporter implements Exportable{
         $this->data=$data;
         
     }
-    public function is_valid()
+    public function is_valid($data)
     {
-          foreach($this->data as $field){
-            if(empty($field)){
+          foreach($data as $field){
+            if(is_null($field)||empty($field)){
                 return false;
             }
           }
